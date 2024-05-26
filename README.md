@@ -15,17 +15,18 @@ This project implements an ETL pipeline using Apache Airflow, Python, and PySpar
  
  
 ## Data Flow: 
-Data Source (Oracle Siebel): The pipeline starts by extracting data from the Oracle Siebel database. 
-Data Extraction (extract.py): A Python script (extract.py) is responsible for extracting the data from the source database. 
-Data Transformation (transform.py): Another Python script (transform.py) transforms the extracted data to prepare it for loading into the target system. This might involve cleaning, filtering, formatting, or aggregating the data. 
-(Optional) Data Validation (validate.py): An optional stage represented by a script (validate.py) performs quality checks on the transformed data. This could involve checking for null values, duplicates, or other data integrity issues. Depending on your needs, data may bypass validation and proceed directly to loading. 
-Data Loading (load.py): A third Python script (load.py) loads the transformed (and optionally validated) data into the target system, which is Teradata in this case. 
-Target System (Teradata): This represents the final destination of the processed data, a Teradata database. 
+**Data Source (Oracle Siebel):** The pipeline starts by extracting data from the Oracle Siebel database. 
+**Data Extraction (extract.py):** A Python script (extract.py) is responsible for extracting the data from the source database. 
+**Data Transformation (transform.py):** Another Python script (transform.py) transforms the extracted data to prepare it for loading into the target system. This might involve cleaning, filtering, formatting, or aggregating the data. 
+**Data Validation (validate.py):** An optional stage represented by a script (validate.py) performs quality checks on the transformed data.
+This could involve checking for null values, duplicates, or other data integrity issues. Depending on your needs, data may bypass validation and proceed directly to loading. 
+**Data Loading (load.py):** A third Python script (load.py) loads the transformed (and optionally validated) data into the target system, which is Teradata in this case. 
+**Target System (Teradata):** This represents the final destination of the processed data, a Teradata database. 
 Orchestration and Monitoring: 
 
-Airflow Scheduler (etl_dag.py): This component, likely defined in a Python script (etl_dag.py), acts as the Airflow scheduler. It orchestrates the execution of the data pipeline stages in the desired order and schedule. 
-Airflow Webserver: This component, not directly shown in the diagram but implied by the connection, is the Airflow web server. It provides a user interface for monitoring the pipeline execution, managing workflows, and scheduling tasks. 
-Monitoring UI: This represents the user interface for monitoring the pipeline's execution status, logs, and potential errors. It likely interacts with the Airflow web server to retrieve this information. 
+**Airflow Scheduler (etl_dag.py):** This component, likely defined in a Python script (etl_dag.py), acts as the Airflow scheduler. It orchestrates the execution of the data pipeline stages in the desired order and schedule. 
+**Airflow Webserver:** This component, not directly shown in the diagram but implied by the connection, is the Airflow web server. It provides a user interface for monitoring the pipeline execution, managing workflows, and scheduling tasks. 
+**Monitoring UI:** This represents the user interface for monitoring the pipeline's execution status, logs, and potential errors. It likely interacts with the Airflow web server to retrieve this information. 
 
 ## Overall Workflow: 
 The Airflow scheduler triggers the execution of the data pipeline. 
