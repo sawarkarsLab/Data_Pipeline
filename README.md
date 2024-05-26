@@ -1,10 +1,8 @@
 # Data Pipeline Project 
 
-  
+This project implements a comprehensive ETL (Extract, Transform, Load) pipeline using Apache Airflow, Python, and PySpark. The pipeline is designed to extract data from an Oracle Siebel database, transform it using PySpark for data cleansing and enrichment, and load the processed data into a Teradata database. The workflow is orchestrated and scheduled using Apache Airflow, ensuring automated and timely data processing. Additionally, the project includes data validation steps to ensure data quality and integrity, along with configuration management through environment variables for secure and flexible setup. This project serves as a robust framework for building efficient, reliable, and scalable data pipelines.
 
-This project implements an ETL pipeline using Apache Airflow, Python, and PySpark. The pipeline extracts data from an Oracle Siebel database, transforms it using PySpark, loads it into a Teradata database, and validates the data. 
-
-  
+ 
  
  
 ## Architecture Diagram  
@@ -115,6 +113,7 @@ This data pipeline architecture ensures a well-structured and maintainable appro
     Use the Airflow UI to monitor the progress of the DAG and check for any errors. 
 
   
+
 
 ## License 
 
